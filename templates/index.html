@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Magic Karten Verwaltung</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  </head>
+  <body>
+    <h1>Meine Magic Karten</h1>
+    <div class="container">
+    <form class="mb-4" method="POST">
+      <input class="form-control" type="text" placeholder="Name der Karte" name="name"><br/>
+      <input class="form-control" type="text" placeholder="Typ" name="typ"><br/>
+      <select class="form-select" name="farbe">
+        <option value="none" selected>bitte auswählen</option>
+        <option value="rot">rot</option>
+        <option value="blau">blau</option>
+        <option value="weiss">weiss</option>
+        <option value="schwarz">schwarz</option>
+        <option value="grün">grün</option>
+        <option value="farblos">farblos</option>
+      </select>
+      <br/>
+      <select class="form-select" name="seltenheit">
+        <option value="none" selected>bitte auswählen</option>
+        <option value="C">Common</option>
+        <option value="U">Uncommon</option>
+        <option value="R">Rare</option>
+        <option value="M">Mythical Rare</option>
+      </select>
+      <br/>
+      <input type="submit" class="btn btn-dark" value="Suchen...">
+    </form>
+    <!--ul>
+      {% for card in cards %}
+      <!--li>{{ card['Name'] }}</li-->
+      {% endfor %}
+    </ul-->
+    </div>
+</body>
+</html>

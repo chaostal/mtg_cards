@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Magic Karten Verwaltung</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+  </head>
+  <body>
+    <h1><a class="header" href="/">Meine Magic Karten</a></h1>
+    {% if results %}
+    <table class="table" id="karten">
+      <thead>
+        <tr>
+          <th onclick="alert('klick')">Name</th>
+          <th onclick="alert('klick')">Typ</th>
+          <th onclick="alert('klick')">Werte</th>
+          <th onclick="alert('klick')">Farbe</th>
+          <th onclick="alert('klick')">Seltenheit</th>
+          <th onclick="alert('klick')">Serie</th>
+          <th onclick="alert('klick')">Kosten</th>
+          <th onclick="alert('klick')">Sprache</th>
+          <th onclick="alert('klick')">Anzahl</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for result in results %}
+        <tr>
+          <td><a href="https://www.cardmarket.com/de/Magic/Products/Search?searchString={{ result['Name'] }}">{{ result['Name'] }}</a></td>
+          <td>{{ result['Typ'] }}</td>
+          <td>{{ result['Stärke'] }}/{{ result['Abwehr'] }}</td>
+          <td>{{ result['Farbe'] }}</td>
+          <td>{{ result['Seltenheit'] }}</td>
+          <td>{{ result['Serie'] }}</td>
+          <td>{{ result['Manakosten'] }}</td>
+          <td>{{ result['Sprache'] }}</td>
+          <td>{{ result['Anzahl'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <!--div class="ul-wrap">
+    {% for result in results %}
+    <ul>
+      <li>Name: <b>{{ result['Name'] }}</b>
+      <li>Typ: <b>{{ result['Typ'] }}</b>
+      <li>Werte: <b>{{ result['Stärke'] }}/{{ result['Abwehr'] }}</b>
+      <li>Farbe: <b>{{ result['Farbe'] }}</b>
+      <li>Kosten: <b>{{ result['Manakosten'] }}</b>
+      <li>Seltenheit: <b>{{ result['Seltenheit'] }}</b>
+      <li>Serie: <b>{{ result['Serie'] }}</b>
+      <li>Sprache: <b>{{ result['Sprache'] }}</b>
+      <li>Anzahl: <b>{{ result['Anzahl'] }}</b>
+    </ul>
+    {% endfor %}
+    </div-->
+    {% else %}
+      <p>Leider nichts gefunden...
+    {% endif %}
+</body>
+</html>

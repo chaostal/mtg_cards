@@ -1,0 +1,36 @@
+html {
+    text-align: center;
+    line-height: 1.5;
+    font-size: 2rem;
+}
+
+@font-face {
+    font-family: cardinal;
+    src: url('./Cardinal.ttf');
+}
+
+h1 {
+    font-family: cardinal;
+    font-size: 4rem;
+    padding: 1rem;
+}
+
+.ul-wrap {
+    //display: flex;
+    max-width: 100%;
+    padding: 1rem;
+}
+
+ul {
+    list-style: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    flex: 400px;
+}
+
+.header {
+    display: inline-block;
+    color: black;
+    text-decoration: none;
+}
