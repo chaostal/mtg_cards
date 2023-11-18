@@ -10,7 +10,6 @@ def index():
     cards = csv.DictReader(raw_cards)
     if request.method == 'POST':
         results = []
-        preresults = []
         for card in cards:
             if request.form['name'] != '':
                 if request.form['name'] in card['Name']:
@@ -21,7 +20,7 @@ def index():
             if request.form['farbe'] != 'none':
                 if request.form['farbe'] in card['Farbe']:
                     results.append(card)
-            if request.form['seltenheit'] != 'none' and not preresults:
+            if request.form['seltenheit'] != 'none':
                 if request.form['seltenheit'] in card['Seltenheit']:
                     results.append(card)
 
