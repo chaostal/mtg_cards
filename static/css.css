@@ -1,7 +1,7 @@
 html {
     text-align: center;
     line-height: 1.5;
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 @font-face {
@@ -9,10 +9,8 @@ html {
     src: url('./Cardinal.ttf');
 }
 
-h1 {
+.navbar-brand, #offcanvasNavbarLabel {
     font-family: cardinal;
-    font-size: 4rem;
-    padding: 1rem;
 }
 
 .ul-wrap {
@@ -21,16 +19,14 @@ h1 {
     padding: 1rem;
 }
 
-ul {
-    list-style: none;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 1rem;
-    flex: 400px;
-}
-
 .header {
     display: inline-block;
     color: black;
     text-decoration: none;
+}
+
+nav {
+    margin-bottom: 2rem;
+    padding: 1rem !important;
+    //font-size: 1rem;
 }

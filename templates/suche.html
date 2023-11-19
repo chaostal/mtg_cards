@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='datatables.min.css') }}">
   </head>
   <body>
-    <h1><a class="header" href="/">Meine Magic Karten</a></h1>
+    {% include "navbar.html" %}
     {% if results %}
     <table class="table table-striped table-bordered" id="karten">
       <thead>
@@ -42,6 +42,7 @@
     {% else %}
       <p>Leider nichts gefunden...
     {% endif %}
+        <script src="./static/bootstrap.min.js"></script>
         <script src="./static/jquery-3.7.0.min.js"></script>
         <script src="./static/datatables.min.js"></script>
         <script>
