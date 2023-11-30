@@ -1,10 +1,10 @@
 mtg_cards.py
 ============
-It all started when I wanted to track my magic cards... I started out with a simple csv file in gnumeric. Then I thought, it would be cool to have a better interface to search them :) Then I used flask to read the csv file an show it in my browser (eg on localhost:5000). Now I am thinking of a mysqlq backend because it's much better for nested search queries and stuff like that, in my opinion. So this is where we're at now. A simple flas app that reads Magic Cards from a csv file.
+It all started when I wanted to track my magic cards... I started out with a simple csv file in gnumeric. Then I thought, it would be cool to have a better interface to search them :) Then I used flask to read the csv file an show it in my browser (eg on localhost:5000). Now I am switched to sqlite and refactored the csv stuff so that there is a import-csv option. So this is where we're at now. A simple flask app that reads Magic Cards from a sqlite db that can import cards via csv file.
 
 usage
 -----
-To run the app for now you'd need a csv file like mine (gotta push an an example for easier usage). Then you'd need to set up a virtual environment like this:
+To run the app for now you'd either need a csv file like mine (pushed an an example for easier usage) or you can add single cards if you like to. But first you'd need to set up a virtual environment like this:
 
 `python -m venv mtg_card_venv`
 
@@ -16,7 +16,7 @@ After you did this you can go on and install flask:
 
 `pip install flask`
 
-Or even better (if I manage to push a requirements file) install all the dependencies from a requirements.txt file:
+Or even better install all the dependencies from the requirements.txt file:
 
 `pip install -r requirements.txt`
 
@@ -34,9 +34,9 @@ And it should look somehow like this (without the font but you can get it here: 
 todo
 ----
 There are some things left to do:
-* mysql backend
+* -mysql backend- now using sqlite
 * deck builder
-* crud methods (we only have r(ead) for now, c(reate),u(pdate) and d(elete) are missing)
+* crud methods (we only have r(ead) and create for now, u(pdate) and d(elete) are missing)
 
 license
 -------
