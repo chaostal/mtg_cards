@@ -34,7 +34,7 @@ And it should look somehow like this (without the font but you can get it here: 
 todo
 ----
 There are some things left to do:
-* -mysql backend- now using sqlite
+* ~~mysql backend~~ now using sqlite
 * deck builder
 * crud methods (we only have r(ead) and create for now, u(pdate) and d(elete) are missing)
 
