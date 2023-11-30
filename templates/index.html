@@ -1,19 +1,11 @@
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8"/>
-    <title>Magic Karten Verwaltung</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-  </head>
-  <body>
-    {% include "navbar.html" %}
-    <div class="container">
+{% extends "base.html" %}
+{% block content %}
+   <div class="container">
     <form class="mb-4" method="POST">
       <input class="form-control" type="text" placeholder="Name der Karte" name="name"><br/>
       <input class="form-control" type="text" placeholder="Typ" name="typ"><br/>
       <select class="form-select" name="farbe">
-        <option value="none" selected>bitte auswählen</option>
+        <option value="none" selected>Farbe wählen</option>
         <option value="rot">rot</option>
         <option value="blau">blau</option>
         <option value="weiss">weiss</option>
@@ -23,7 +15,7 @@
       </select>
       <br/>
       <select class="form-select" name="seltenheit">
-        <option value="none" selected>bitte auswählen</option>
+        <option value="none" selected>Seltenheit wählen</option>
         <option value="C">Common</option>
         <option value="U">Uncommon</option>
         <option value="R">Rare</option>
@@ -32,7 +24,5 @@
       <br/>
       <input type="submit" class="btn btn-dark" value="Suchen...">
     </form>
-    </div>
-    <script src="./static/bootstrap.min.js"></script>
-  </body>
-</html>
+   </div>
+{% endblock %}
